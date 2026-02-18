@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us | Art Gallery</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">🎨 Art Gallery</div>
+    <div>
+        <a href="/">Home</a>
+        <a href="/customer">Gallery</a>
+        <a href="/login" class="btn">Login</a>
+    </div>
+</div>
+
+<section class="contact-section">
+
+    <!-- Contact 1 -->
+    <div class="contact-card">
+        <img src="{{ url_for('static', filename='images/contact1.jpg') }}"
+             class="contact-img">
+
+        <h2>Pranay Chavan</h2>
+        <p>📞 +91 9022123644</p>
+        <p>📧 chavanpranay037@gmail.com</p>
+    </div>
+
+    <!-- Contact 2 -->
+    <div class="contact-card">
+        <img src="{{ url_for('static', filename='images/contact2.jpg') }}"
+             class="contact-img">
+
+        <h2> Roshan Dubole</h2>
+        <p>📞 +91 9545626138</p>
+        <p>📧 roshandubole5@gmail.com</p>
+    </div>
+
+</section>
+
+
+
+</body>
+</html>

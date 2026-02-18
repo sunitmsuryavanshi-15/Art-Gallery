@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>🎨 Art Gallery Admin</h2>
+    <a href="{{ url_for('logout') }}" class="btn danger">Logout</a>
+</div>
+
+<div class="container">
+
+ 
+
+    <!-- ================= ADD ARTIST ================= -->
+    <div class="card">
+        <h3>➕ Add Artist</h3>
+
+        <form method="POST" action="{{ url_for('add_artist') }}" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Artist Name" required>
+            <input type="text" name="mobile" placeholder="Mobile Number">
+            <input type="email" name="email" placeholder="Email Address">
+            <input type="file" name="photo" accept="image/*">
+            <textarea name="bio" placeholder="About Artist"></textarea>
+            <button type="submit" class="btn primary">Add Artist</button>
+        </form>
+    </div>
+
+    <!-- ================= ARTIST LIST ================= -->
+    <div class="card">
+        <h3>👨‍🎨 All Artists</h3>
+
+        {% if artists %}
+            {% for artist in artists %}
+                <div class="request-box">
+                    <span>
+                        {{ artist.name }}
+                        <small style="color:#777;">
+                            | {{ artist.mobile or "N/A" }} | {{ artist.email or "N/A" }}
+                        </small>
+                    </span>
+
+                    <a href="{{ url_for('delete_artist', artist_id=artist.id) }}"
+                       class="btn danger"
+                       onclick="return confirm('Are you sure you want to delete this artist?')">
+                       ❌ Remove
+                    </a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="muted">No artists added yet.</p>
+        {% endif %}
+    </div>
+
+    <!-- ================= ADD ARTWORK ================= -->
+    <div class="card">
+        <h3>🖼️ Add Artwork</h3>
+
+        <form action="{{ url_for('add_artwork') }}"
+              method="post"
+              enctype="multipart/form-data"
+              class="grid-form">
+
+            <input type="text" name="art_title" placeholder="Artwork Title" required>
+
+            <!-- ✅ ARTIST DROPDOWN (FIX) -->
+            <select name="artist_id" required>
+                <option value="">-- Select Artist --</option>
+                {% for artist in artists %}
+                    <option value="{{ artist.id }}">{{ artist.name }}</option>
+                {% endfor %}
+            </select>
+
+            <input type="number" name="price" placeholder="Price ₹" required>
+            <textarea name="description" placeholder="Artwork Description"></textarea>
+            <input type="file" name="art_image" accept="image/*" required>
+
+            <button class="btn primary">Add Artwork</button>
+        </form>
+    </div>
+
+    <!-- ================= ARTWORK LIST ================= -->
+    <div class="card">
+        <h3>🗂️ All Artworks</h3>
+
+        {% if artworks %}
+            {% for art in artworks %}
+                <div class="request-box">
+                    <span>
+                        {{ art.title }}
+                        <small style="color:#777;">
+                            | {{ art.name }} | ₹{{ art.price }}
+                        </small>
+                    </span>
+
+                    <a href="{{ url_for('delete_artwork', art_id=art.id) }}"
+                       class="btn danger"
+                       onclick="return confirm('Delete this artwork?')">
+                       ❌ Remove
+                    </a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="muted">No artworks added yet.</p>
+        {% endif %}
+    </div>
+
+</div>
+<h3>QR Payments</h3>
+<div class="payments-section">
+    <h2>💳 QR Payments</h2>
+
+    <table class="payment-table">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Painting Name</th>  <!-- 👈 Add -->
+            <th>Amount</th>
+            <th>Method</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for pay in payments %}
+        <tr>
+            <td>{{ pay.username }}</td>
+            <td>{{ pay.art_name }}</td>  <!-- 👈 Add -->
+            <td>₹{{ pay.amount }}</td>
+            <td>{{ pay.payment_method }}</td>
+            <td class="success-status">{{ pay.status }}</td>
+            <td>{{ pay.date }}</td>
+            <td>
+                <a href="{{ url_for('delete_payment', payment_id=pay.id) }}"
+                   class="delete-btn">
+                    Remove
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+</div>
+
+
+
+<a href="{{ url_for('home') }}" class="btn-home">🏠 Back to Home</a>
+
+</body>
+</html>

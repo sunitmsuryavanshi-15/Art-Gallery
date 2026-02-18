@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Gallery</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='customer.css') }}">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<div class="navbar">
+    <a href="{{ url_for('logout') }}" class="btn danger logout-btn">Logout</a>
+</div>
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+    <h1>Discover Beautiful Artworks</h1>
+    <p>Explore creativity from talented artists around the world</p>
+</div>
+
+<!-- ================= GALLERY ================= -->
+<div class="container">
+    <h2 class="section-title">Available Artworks</h2>
+
+    <div class="gallery-grid">
+
+        {% for art in artworks %}
+        <div class="art-card">
+
+            <!-- Image -->
+            <img src="{{ url_for('static', filename='uploads/' ~ art.image) }}"
+                 alt="Artwork Image"
+                 class="art-image">
+
+            <!-- Title -->
+            <h3 class="art-title">{{ art.title }}</h3>
+
+            <!-- Artist -->
+            <p class="artist">👨‍🎨 <b>{{ art.name }}</b></p>
+
+            <!-- Price -->
+            <p class="price">₹ {{ art.price }}</p>
+
+            <!-- Short Description -->
+            <p class="desc">{{ art.description }}</p>
+
+            <!-- ✅ View Details Button (FIXED) -->
+            <a href="{{ url_for('artwork_details', art_id=art.id) }}"
+               class="btn view-btn">
+               View Details
+            </a>
+            <!-- Buy Now Button -->
+<a href="{{ url_for('payment', art_id=art.id) }}"
+   class="btn buy-btn">
+   Buy Now
+</a>
+
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+    {% if artworks|length == 0 %}
+        <p class="empty">No artworks available right now.</p>
+    {% endif %}
+</div>
+
+
+<a href="{{ url_for('home') }}" class="btn-home">🏠 Back to Home</a>
+
+
+</body>
+</html>

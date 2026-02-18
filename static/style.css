@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    margin: 0;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #4e73df;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LAYOUT */
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+/* CARD */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ddd;
+    margin-bottom: 25px;
+}
+
+/* FORMS */
+.form-grid {
+    display: grid;
+    gap: 10px;
+}
+
+input, textarea, select {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* BUTTONS */
+.btn {
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.primary {
+    background: #4e73df;
+    color: white;
+}
+
+.danger {
+    background: #e74a3b;
+    color: white;
+}
+
+.small {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+/* TABLE */
+.modern-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.modern-table th {
+    background: #4e73df;
+    color: white;
+    padding: 10px;
+}
+
+.modern-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.modern-table tr:hover {
+    background: #f1f1f1;
+}

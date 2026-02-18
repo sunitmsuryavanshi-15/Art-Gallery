@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ art.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='art_details.css') }}">
+
+</head>
+<body>
+
+<div class="details-container">
+
+    <img src="{{ url_for('static', filename='uploads/' ~ art.image) }}"
+         class="details-img">
+
+    <h2>{{ art.title }}</h2>
+    <p>👨‍🎨 Artist: {{ art.name }}</p>
+    <h3>₹ {{ art.price }}</h3>
+
+    <p>{{ art.description }}</p>
+
+    <!-- 💳 PAYMENT BUTTON (FIXED) -->
+ <a href="{{ url_for('payment', art_id=art.id) }}"
+   class="btn success">
+   💳 Pay Now
+</a>
+
+
+    <br>
+    <a href="{{ url_for('customer') }}" class="btn secondary">⬅ Back</a>
+
+</div>
+
+</body>
+</html>

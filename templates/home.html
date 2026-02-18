@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Art Gallery</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<div class="navbar">
+    <div class="logo"> Art Gallery</div>
+
+    <div class="nav-right">
+        
+        <a href="/contact">Contact</a>
+       <a href="/login" class="btn primary login-btn">Login</a>
+
+    </div>
+</div>
+
+<!-- ===== HERO IMAGE SECTION ===== -->
+<section class="hero-image">
+    <div class="hero-overlay">
+        <div class="hero-icon">
+        Wel-Come
+        <div>To</div>
+        </div>
+        <h1>ABSTRACT</h1>
+        <h2>GALLERY</h2>
+    </div>
+</section>
+
+<!-- ===== GALLERY GRID ===== -->
+<section class="gallery">
+
+    <div class="art-card">
+        <img src="/static/images/art1.jpg" alt="art">
+    </div>
+
+    <div class="art-card">
+        <img src="/static/images/art2.jpg" alt="art">
+    </div>
+
+    <div class="art-card">
+        <img src="/static/images/art3.jpg" alt="art">
+    </div>
+
+    <div class="art-card">
+        <img src="/static/images/art4.jpg" alt="art">
+    </div>
+
+    <div class="art-card">
+        <img src="/static/images/art5.jpg" alt="art">
+    </div>
+
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    Art Gallery Project
+</footer>
+
+</body>
+</html>

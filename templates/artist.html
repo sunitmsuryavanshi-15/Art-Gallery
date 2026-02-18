@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artists Gallery</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='artist.css') }}">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<div class="navbar">
+    <h2>🎨 Artists Gallery</h2>
+    <a href="{{ url_for('logout') }}" class="btn danger">Logout</a>
+</div>
+
+<div class="container">
+
+    <h2 class="section-title">✨ Discover Talented Artists</h2>
+
+    <div class="gallery-grid">
+
+{% for artist in artists %}
+  <div class="artist-card">
+
+    <!-- Top Section -->
+    <div class="card-top">
+      <img
+        src="{{ url_for('static',
+              filename='uploads/' ~ artist.photo
+              if artist.photo else 'images/artist_placeholder.png') }}"
+        class="avatar"
+        alt="Artist Photo">
+    </div>
+
+    <!-- Card Body -->
+    <div class="card-body">
+      <h3>{{ artist.name }}</h3>
+      <p class="role">🎨 Visual Artist</p>
+
+     
+
+      <!-- Rating -->
+      <div class="rating">
+        ⭐ 4.9
+      </div>
+
+      <!-- Contact Info -->
+      <div class="contact-info">
+          <p>📞 <b>Phone:</b> {{ artist.mobile or "N/A" }}</p>
+          <p>📧 <b>Email:</b> {{ artist.email or "N/A" }}</p>
+      </div>
+
+    </div>
+
+  </div>
+{% endfor %}
+
+    </div>
+</div>
+
+<a href="{{ url_for('home') }}" class="btn-home">🏠 Back to Home</a>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #f5f7fb;
+    color: #222;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background: linear-gradient(135deg, #4e73df, #1cc88a);
+    padding: 16px 40px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logout-btn {
+    background: #e74a3b;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* ===== HERO ===== */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #4e73df, #1cc88a);
+    color: white;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 17px;
+    opacity: 0.95;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1200px;
+    margin: -60px auto 40px;
+    padding: 0 20px;
+}
+
+.section-title {
+    margin: 40px 0 25px;
+    font-size: 26px;
+}
+
+/* ===== GRID ===== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+/* ===== ART CARD ===== */
+.art-card {
+    background: white;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.1);
+    transition: all 0.35s ease;
+}
+
+.art-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 35px 70px rgba(0,0,0,0.18);
+}
+
+/* IMAGE */
+.art-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* CONTENT */
+.art-card h3 {
+    padding: 15px 18px 0;
+    font-size: 20px;
+}
+
+.artist {
+    padding: 4px 18px;
+    color: #555;
+    font-size: 14px;
+}
+
+.price {
+    padding: 6px 18px;
+    color: #16a34a;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.desc {
+    padding: 6px 18px 14px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* BUTTON */
+.view-btn {
+    display: block;
+    margin: 0 18px 18px;
+    padding: 12px;
+    text-align: center;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.view-btn:hover {
+    opacity: 0.9;
+}
+
+/* ===== EMPTY STATE ===== */
+.empty {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 16px;
+    color: #666;
+}
+
+/* ===== BUY BUTTON ===== */
+.btn.primary {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 12px 26px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    text-align: center;
+    padding: 18px;
+    background: #1f2937;
+    color: #eee;
+    margin-top: 40px;
+}
+
+/* ===== BACK HOME ===== */
+.btn-home {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 18px;
+    background: #111827;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 600;
+}
+.buy-btn {
+    background: linear-gradient(45deg, #00c853, #00e676);
+    color: white;
+    margin-top: 8px;
+}
+
+.buy-btn:hover {
+    opacity: 0.9;
+}

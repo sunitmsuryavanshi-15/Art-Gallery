@@ -1,0 +1,126 @@
+/* ===== RESET ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 50px;
+    background:white;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:600;
+}
+
+.nav-right a{
+    margin-left:20px;
+    text-decoration:none;
+    color:#222;
+    font-weight:500;
+}
+
+.login-btn{
+    padding:6px 16px;
+    background:#4e73df;
+    color:white !important;
+    border-radius:6px;
+}
+
+/* ===== HERO IMAGE ===== */
+.hero-image{
+    height:70vh;
+    background:url("/static/images/hero.jpg") center/cover no-repeat;
+    position:relative;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.35);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    text-align:center;
+}
+
+.hero-icon{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.hero-overlay h1{
+    font-size:48px;
+    letter-spacing:4px;
+}
+
+.hero-overlay h2{
+    font-size:22px;
+    letter-spacing:6px;
+    margin-top:10px;
+}
+
+/* ===== GALLERY GRID ===== */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    padding:60px 80px;
+}
+
+.art-card{
+    overflow:hidden;
+    border-radius:6px;
+}
+
+.art-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.5s ease;
+}
+
+.art-card:hover img{
+    transform:scale(1.1);
+}
+
+/* ===== FOOTER ===== */
+.footer{
+    text-align:center;
+    padding:18px;
+    background:#222;
+    color:#eee;
+}
+.login-btn{
+    position: relative;
+    overflow: hidden;
+}
+
+.login-btn::before{
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    background: rgba(78,115,223,0.25);
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.login-btn:hover::before{
+    opacity: 1;
+}
+.contact-btn{
+    padding:6px 16px;
+    background:#4e73df;
+    color:white !important;
+    border-radius:6px;
+}

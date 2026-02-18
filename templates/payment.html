@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment | Art Gallery</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='payment.css') }}">
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="success-message">
+        {{ messages[0] }}
+    </div>
+  {% endif %}
+{% endwith %}
+
+
+<div class="payment-card">
+    <h2>💳 Payment</h2>
+    <p>Complete your artwork purchase</p>
+
+    <!-- CARD PAYMENT FORM -->
+    <form method="POST" action="/card_payment">
+        <input type="text" name="card_name" placeholder="Card Holder Name" required>
+        <input type="text" name="card_number" placeholder="Card Number" required>
+
+        <div class="row">
+            <input type="text" name="expiry" placeholder="MM/YY" required>
+            <input type="text" name="cvv" placeholder="CVV" required>
+        </div>
+
+        <button type="submit">Pay Now</button>
+    </form>
+
+    <!-- QR BUTTON -->
+    <button type="button" class="btn secondary" onclick="showQR()">
+        Pay via QR Code
+    </button>
+
+    <!-- QR SECTION -->
+    <div id="qrSection" style="display:none; margin-top:15px;">
+        <img src="{{ url_for('static', filename='images/qr.jpeg') }}" width="200">
+
+        <!-- SEPARATE QR FORM -->
+       <form method="POST" action="{{ url_for('qr_payment') }}">
+    <input type="hidden" name="art_id" value="{{ art.id }}">
+    <input type="hidden" name="payment_method" value="QR Code">
+
+    <button type="submit" class="btn primary">
+        Confirm Payment
+    </button>
+</form>
+
+    </div>
+
+    <a href="/customer" class="back">← Back to Gallery</a>
+</div>
+
+<script>
+function showQR() {
+    document.getElementById("qrSection").style.display = "block";
+}
+</script>
+
+</body>
+</html>

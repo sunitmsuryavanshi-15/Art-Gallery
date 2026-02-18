@@ -1,0 +1,194 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: #f4f6fb;
+    color: #333;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background: linear-gradient(135deg, #4e73df, #6f42c1);
+    color: white;
+    padding: 16px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h2 {
+    font-size: 22px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.danger {
+    background: #e74a3b;
+    color: white;
+}
+
+.danger:hover {
+    background: #c0392b;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    padding: 40px 60px;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+/* ===== GRID ===== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* ===== ARTIST CARD ===== */
+.artist-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    transition: all 0.35s ease;
+}
+
+.artist-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.18);
+}
+
+/* ===== CARD TOP ===== */
+.card-top {
+    height: 130px;
+    background: linear-gradient(135deg, #ff7a18, #6f42c1);
+    position: relative;
+}
+
+.avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+    position: absolute;
+    left: 50%;
+    bottom: -45px;
+    transform: translateX(-50%);
+    background: white;
+}
+
+/* ===== CARD BODY ===== */
+.card-body {
+    padding: 60px 20px 25px;
+    text-align: center;
+}
+
+.card-body h3 {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.role {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+/* ===== TAGS ===== */
+.tags {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.tags span {
+    background: #eef1ff;
+    color: #4e73df;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* ===== STATS ===== */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.stats div {
+    background: #f8f9fc;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.stats small {
+    display: block;
+    font-size: 11px;
+    color: #777;
+    margin-top: 4px;
+}
+
+/* ===== BUTTON ===== */
+.cta-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    background: linear-gradient(135deg, #4e73df, #1cc88a);
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* ===== EMPTY STATE ===== */
+.empty-state {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 18px;
+    color: #999;
+}
+
+/* ===== BACK HOME ===== */
+.btn-home {
+    display: inline-block;
+    margin: 40px auto;
+    padding: 10px 18px;
+    background: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.btn-home:hover {
+    background: #000;
+}

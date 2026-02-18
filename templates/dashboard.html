@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>
+        {% if session.role == 'artist' %}
+            🎨 Artist Dashboard
+        {% elif session.role == 'customer' %}
+            🛒 Customer Gallery
+        {% elif session.role == 'admin' %}
+            🛠 Admin Panel
+        {% endif %}
+    </h2>
+
+    <a href="/logout" class="logout">Logout</a>
+</div>
+
+<div class="content">
+    <p>Welcome <b>{{ session.username }}</b></p>
+
+    {% if session.role == 'artist' %}
+        <p>You can manage and view your artworks.</p>
+
+    {% elif session.role == 'customer' %}
+        <p>You can explore and view artworks.</p>
+
+    {% endif %}
+</div>
+
+</body>
+</html>
